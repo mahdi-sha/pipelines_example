@@ -9,16 +9,11 @@ resources:
 pipelines:
 - name: sleep2
   steps:
-    - name: preperation_step
+  - name: First_Step
     type: Bash
     configuration:
         inputResources:
-            - name: cron_trigger
-    execution:
-      onExecute:
-        - sleep 1
-  - name: First_Step
-    type: Bash
+          - name: cron_trigger
     execution:
       onExecute:
         - sleep 20
@@ -46,5 +41,3 @@ pipelines:
     execution:
       onExecute:
         - sleep 12
-- triggers:
-    cron: "H 8 * * *"
