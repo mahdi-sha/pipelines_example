@@ -2,7 +2,7 @@ resources:
   - name: cron_trigger
     type: CronTrigger
     configuration:
-      time: '0 13 13 ? * *'  
+      interval: '0 16 13 ? * *'  
 
 
 
