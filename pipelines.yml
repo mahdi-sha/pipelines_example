@@ -9,7 +9,7 @@ resources:
 pipelines:
 - name: sleep2
   steps:
-    - name: step_1
+    - name: preperation_step
     type: Bash
     configuration:
         inputResources:
