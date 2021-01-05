@@ -1,6 +1,22 @@
+resources:
+  - name: cron_trigger
+    type: CronTrigger
+    configuration:
+      interval: '*/5 * * * *'  
+
+
+
 pipelines:
 - name: sleep2
   steps:
+    - name: step_1
+    type: Bash
+    configuration:
+        inputResources:
+            - name: cron_trigger
+    execution:
+      onExecute:
+        - sleep 1
   - name: First_Step
     type: Bash
     execution:
@@ -29,4 +45,6 @@ pipelines:
         - name: Third_Step
     execution:
       onExecute:
-        - sleep 120
+        - sleep 12
+- triggers:
+    cron: "H 8 * * *"
