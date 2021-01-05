@@ -17,6 +17,7 @@ pipelines:
     execution:
       onExecute:
         - sleep 20
+        - echo "this is sleep fpr 20 seconds"
   - name: Second_Step
     type: Bash
     configuration:
