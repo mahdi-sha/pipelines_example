@@ -2,7 +2,7 @@ resources:
   - name: cron_trigger
     type: CronTrigger
     configuration:
-      interval: '10 13 * * *'  
+      interval: '10 6 * * *'  
 
 
 
@@ -16,7 +16,7 @@ pipelines:
           - name: cron_trigger
     execution:
       onExecute:
-        - sleep 20
+        - sleep 2
         - echo "this is sleep fpr 20 seconds"
   - name: Second_Step
     type: Bash
@@ -25,7 +25,7 @@ pipelines:
         - name: First_Step
     execution:
       onExecute:
-        - sleep 900
+        - sleep 1800
   - name: Third_Step
     type: Bash
     configuration:
@@ -33,7 +33,7 @@ pipelines:
         - name: Second_Step
     execution:
       onExecute:
-        - sleep 20
+        - sleep 1800
   - name: Fourth_Step
     type: Bash
     configuration:
@@ -41,4 +41,4 @@ pipelines:
         - name: Third_Step
     execution:
       onExecute:
-        - sleep 12
+        - sleep 2
