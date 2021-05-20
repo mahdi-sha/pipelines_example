@@ -2,7 +2,7 @@ resources:
   - name: cron_trigger
     type: CronTrigger
     configuration:
-      interval: '10 6 * * *'  
+      interval: '*/3 * * * *'  
 
 
 
@@ -25,7 +25,7 @@ pipelines:
         - name: First_Step
     execution:
       onExecute:
-        - sleep 30
+        - sleep 1000
   - name: Third_Step
     type: Bash
     configuration:
