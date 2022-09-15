@@ -1,1 +1,8 @@
-
+pipelines:
+- name: whileTrue
+  steps:
+  - name: main
+    type: Bash
+    execution:
+      onExecute:
+        - while true; do; echo "hello-world"; done
