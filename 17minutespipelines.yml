@@ -5,4 +5,4 @@ pipelines:
     type: Bash
     execution:
       onExecute:
-        - while true; do; echo "hello-world"; done
+        - while true; do echo "hello-world"; done
